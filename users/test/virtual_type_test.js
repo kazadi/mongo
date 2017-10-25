@@ -5,8 +5,8 @@ describe('Virtual types', () => {
     it('postCount returns number of posts', (done) => {
         const joe = new User({ 
             name: 'Joe',
-            post: [{title: 'PostTitle'}]
-        })
+            posts: [{title: 'PostTitle'}]
+        });
         joe.save()
         .then(() => User.findOne({name: 'Joe'}))
         .then((user) => {
