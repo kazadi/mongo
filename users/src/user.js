@@ -26,7 +26,7 @@ const User = mongoose.model('user', UserSchema);
 module.exports = User;
 
 /*
-Notes:
+NOTES:
 Virtual Type/field/property: refers to any property that 
 doesnt get persisted to the mongoDB database
  */
