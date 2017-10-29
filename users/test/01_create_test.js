@@ -9,7 +9,7 @@ describe('Creating records', () =>{
 		joe.save()
 			.then(()=> {
 				// 3.verify w/ code
-				// has joe been saved, sucessfully?
+				// has joe been saved, successfully?
 				assert(!joe.isNew);
 				done();
 			})

@@ -6,7 +6,8 @@ before((done) => {
 		useMongoClient: true
 	});
 	mongoose.connection
-		.once('open', () => { done(); })		.on('error', (error) => {
+		.once('open', () => { done(); })		
+		.on('error', (error) => {
 			console.warn('Warning', error);
 		});
 });
