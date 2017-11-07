@@ -20,6 +20,6 @@ module.exports = () => {
     
     return Promise.all([minVal, maxVal])
     .then((result) => {
-        return {min: result[0],max: result[1]}
+        return {min: result[0], max: result[1]}
     })
 };
