@@ -30,12 +30,15 @@ const Artist = require('../models/artist');
             offset: offset, 
             limt: limit 
         }
-    })
-
+    });
 };
 
 const buildQuery = (criteria) => {
     const query = {};
+
+    if(criteria.name) {
+        query.$text = {$search: criteria.name}
+    }
 
     if (criteria.age) {
         query.age = {
@@ -44,5 +47,11 @@ const buildQuery = (criteria) => {
         }
     }
 
+    if (criteria.yearsActive) {
+        query.yearsActive = {
+            $gte: criteria.yearsActive.min,
+            $lte: criteria.yearsActive.max
+        }
+    }
     return query;
 }
